@@ -1,0 +1,35 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: "true"
+  creationTimestamp: "2024-04-23T12:03:30Z"
+  labels:
+    app: springboot-demo
+    app.kubernetes.io/component: springboot-demo
+    app.kubernetes.io/instance: springboot-demo
+    app.kubernetes.io/name: springboot-demo
+    app.kubernetes.io/part-of: springboot-demo-app
+  name: springboot-demo
+  namespace: springboot-cicd
+  resourceVersion: "844407"
+  uid: 4fb9c504-76dd-4bd1-a977-37d380a9007d
+spec:
+  host: springboot-demo-springboot-cicd.apps.ocp4.piotr-owczarc.com
+  port:
+    targetPort: 8080-tcp
+  to:
+    kind: Service
+    name: springboot-demo
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+    - conditions:
+        - lastTransitionTime: "2024-04-23T12:03:30Z"
+          status: "True"
+          type: Admitted
+      host: springboot-demo-springboot-cicd.apps.ocp4.piotr-owczarc.com
+      routerCanonicalHostname: router-default.apps.ocp4.piotr-owczarc.com
+      routerName: default
+      wildcardPolicy: None

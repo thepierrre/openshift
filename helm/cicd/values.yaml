@@ -1,0 +1,8 @@
+namespace: springboot-cicd
+
+git:
+  repository: https://github.com/thepierrre/demo-springboot-app
+
+image:
+  repository: image-registry.openshift-image-registry.svc:5000/springboot-cicd/springboot-demo
+  tag: latest

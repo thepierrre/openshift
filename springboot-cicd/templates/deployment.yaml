@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-demo
+  namespace: springboot-cicd
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: springboot-demo
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: springboot-demo
+        deployment: springboot-demo
+    spec:
+      containers:
+      - name: springboot-demo
+        image: image-registry.openshift-image-registry.svc:5000/springboot-cicd/springboot-demo:latest
+        imagePullPolicy: IfNotPresent
+        name: springboot-demo
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        - containerPort: 8443
+          protocol: TCP
+
+# image: image-registry.openshift-image-registry.svc:5000/springboot-cicd/springboot-demo@sha256:5a85c0c337e54784c74683cbb90bac02268be23fc5aecf58a9a4a4c5d2545fd9

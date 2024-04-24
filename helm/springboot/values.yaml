@@ -1,0 +1,13 @@
+
+appName: example
+
+namespace: example
+
+host: apps.ocp4.piotr-owczarc.com
+
+replicaCount: example
+
+image:
+  repository: example
+  tag: example
+

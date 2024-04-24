@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: sonarqube-scanner-custom
+spec:
+  workspaces:
+    - name: source
+  steps:
+    - name: sonarqube-scanner
+      image: java:17
+      command: ["/ko-app/sonar-scanner"]

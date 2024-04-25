@@ -17,7 +17,7 @@ spec:
         generateName: sample-java-pipeline-run-
       spec:
         pipelineRef:
-          name: sample-java-pipeline
+          name: java-pipeline
         serviceAccountName: pipeline
         workspaces:
           - name: source-dir

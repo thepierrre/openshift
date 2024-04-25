@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: springboot-demo
+spec:
+  destination:
+    name: ""
+    namespace: springboot-demo
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/thepierrre/openshift
+    path: ./springboot-cicd/templates
+    targetRevision: HEAD
+  sources: []
+  project: default
+
+

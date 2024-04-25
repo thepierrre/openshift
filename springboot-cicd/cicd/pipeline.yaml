@@ -49,7 +49,7 @@ spec:
     - name: build-and-push-image
       params:
         - name: IMAGE
-          value: default-route-openshift-image-registry.apps.ocp4.piotr-owczarc.com/springboot-demo/springboot-demo:$(tasks.get-project-version.results.version)
+          value: default-route-openshift-image-registry.apps.ocp4.piotr-owczarc.com/springboot-demo/springboot-demo:0.0.1
       runAfter:
         - get-project-version
       taskRef:

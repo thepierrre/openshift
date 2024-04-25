@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+  labels:
+  name: el-github-event-listener
+  namespace: springboot-demo
+spec:
+  host: el-github-event-listener-springboot-demo.apps.ocp4.piotr-owczarc.com
+  port:
+    targetPort: http-listener
+  to:
+    kind: Service
+    name: el-github-event-listener

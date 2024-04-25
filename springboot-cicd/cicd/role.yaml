@@ -6,4 +6,4 @@ metadata:
 rules:
   - apiGroups: ["tekton.dev"]
     resources: ["tasks"]
-    verbs: ["patch", "post"]
+    verbs: ["patch", "create", "update"]

@@ -2,7 +2,7 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   name: springboot-demo
-  namespace: springboot-cicd
+  namespace: springboot-demo
 spec:
   host: springboot-demo-springboot-cicd.apps.ocp4.piotr-owczarc.com
   to:

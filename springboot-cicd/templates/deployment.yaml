@@ -2,10 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: springboot-demo
-  namespace: springboot-cicd
+  namespace: springboot-demo
 spec:
   replicas: 1
-  revisionHistoryLimit: 10
   selector:
     matchLabels:
       app: springboot-demo
@@ -22,7 +21,7 @@ spec:
     spec:
       containers:
       - name: springboot-demo
-        image: image-registry.openshift-image-registry.svc:5000/springboot-cicd/springboot-demo:latest
+        image: image-registry.openshift-image-registry.svc:5000/springboot-cicd/springboot-demo:0.0.1
         imagePullPolicy: IfNotPresent
         name: springboot-demo
         ports:
@@ -31,4 +30,3 @@ spec:
         - containerPort: 8443
           protocol: TCP
 
-# image: image-registry.openshift-image-registry.svc:5000/springboot-cicd/springboot-demo@sha256:5a85c0c337e54784c74683cbb90bac02268be23fc5aecf58a9a4a4c5d2545fd9

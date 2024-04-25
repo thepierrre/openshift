@@ -49,7 +49,7 @@ spec:
     - name: build-and-push-image
       params:
         - name: IMAGE
-          value: default-route-openshift-image-registry.apps.ocp4.piotr-owczarc.com/springboot-demo/springboot-demo:$(tasks.get-project-version.results.version)
+          value: default-route-openshift-image-registry.apps.ocp4.piotr-owczarc.com/springboot-demo/springboot-demo:latest
       runAfter:
         - get-project-version
       taskRef:
@@ -63,3 +63,5 @@ spec:
     - name: source-dir
     - name: maven-settings-dir
     - name: maven-local-m2
+
+# $(tasks.get-project-version.results.version)

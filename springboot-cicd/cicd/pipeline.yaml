@@ -16,7 +16,7 @@ spec:
       workspaces:
         - name: output
           workspace: source-dir
-    - name: maven-build
+    - name: maven-build-artifact
       params:
         - name: MAVEN_IMAGE
           value: docker.io/library/maven:3-eclipse-temurin-21-alpine

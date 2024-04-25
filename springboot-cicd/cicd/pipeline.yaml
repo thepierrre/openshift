@@ -42,7 +42,7 @@ spec:
         kind: Task
         name: get-project-version
       runAfter:
-        - maven-build
+        - maven-build-artifact
       workspaces:
         - name: source
           workspace: source-dir

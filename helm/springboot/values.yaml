@@ -1,13 +1,13 @@
 
-appName: example
+appName: springboot-demo
 
-namespace: example
+namespace: springboot-demo
 
 host: apps.ocp4.piotr-owczarc.com
 
-replicaCount: example
+replicaCount: 2
 
 image:
-  repository: example
-  tag: example
+  repository: image-registry.openshift-image-registry.svc:5000/springboot-demo/springboot-demo
+  tag: 0.0.1
 

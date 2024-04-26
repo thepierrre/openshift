@@ -4,6 +4,7 @@ metadata:
   name: push-java-image-pipeline
 spec:
   destination:
+    namespace: springboot-demo
     server: https://kubernetes.default.svc
   source:
     repoURL: 'https://github.com/thepierrre/openshift'

@@ -2,6 +2,8 @@ apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
   name: java-pipeline
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
 spec:
   tasks:
     - name: fetch-repository
@@ -16,7 +18,7 @@ spec:
       workspaces:
         - name: output
           workspace: source-dir
-    - name: maven-build-artifact
+    - name: build-artifact
       params:
         - name: MAVEN_IMAGE
           value: docker.io/library/maven:3-eclipse-temurin-21-alpine

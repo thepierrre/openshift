@@ -3,6 +3,8 @@ kind: Task
 metadata:
   name: get-project-version
   namespace: springboot-demo
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   workspaces:
     - name: source

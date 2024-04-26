@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: create-namespaces
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: 'https://github.com/thepierrre/openshift'
+    path: ./springboot-cicd/namespaces
+    targetRevision: HEAD
+  project: default

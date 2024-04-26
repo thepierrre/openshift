@@ -5,10 +5,16 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-  source:
-    repoURL: 'https://piotrowczarc.github.io/helm-charts/'
-    chart: cicd
-    targetRevision: 0.2.1
+  sources:
+    - repoURL: 'https://piotrowczarc.github.io/helm-charts/'
+      chart: cicd
+      targetRevision: 0.3.0
+      helm:
+        valueFiles:
+          - $values/helm/pipeline-values.yaml
+    - repoURL: https://github.com/thepierrre/demo-springboot-app
+      targetRevision: HEAD
+      ref: values
   project: default
 
 

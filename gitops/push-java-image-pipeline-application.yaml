@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: push-java-image-pipeline
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: 'https://github.com/thepierrre/openshift'
+    path: ./springboot-cicd/cicd
+    targetRevision: HEAD
+  project: default
+
+

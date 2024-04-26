@@ -1,2 +1,4 @@
 /certs
 .prettierignore
+deployment.yaml
+service.yaml

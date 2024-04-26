@@ -2,6 +2,7 @@ apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
   name: java-pipeline
+  namespace: springboot-demo
   annotations:
     argocd.argoproj.io/sync-wave: "4"
 spec:

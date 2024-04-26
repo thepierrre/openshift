@@ -3,6 +3,7 @@ apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
   name: buildah
+  namespace: springboot-demo
   labels:
     app.kubernetes.io/version: "0.7"
   annotations:

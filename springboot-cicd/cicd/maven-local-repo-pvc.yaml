@@ -2,6 +2,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: maven-local-repo-workspace
+  namespace: springboot-demo
   annotations:
     argocd.argoproj.io/sync-wave: "3"
 spec:

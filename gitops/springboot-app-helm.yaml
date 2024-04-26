@@ -2,7 +2,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: springboot-demo
+  namespace: openshift-gitops
 spec:
+  syncPolicy: 
+    automated:
+      selfHeal: true
   destination:
     namespace: springboot-demo
     server: https://kubernetes.default.svc
@@ -17,4 +21,3 @@ spec:
       targetRevision: HEAD
       ref: values
   project: default
-c

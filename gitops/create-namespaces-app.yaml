@@ -2,11 +2,15 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: create-namespaces
+  namespace: openshift-gitops
 spec:
+  syncPolicy: 
+    automated:
+      selfHeal: true
   destination:
     server: https://kubernetes.default.svc
   source:
     repoURL: 'https://github.com/thepierrre/openshift'
-    path: ./springboot-cicd/namespaces
+    path: resources
     targetRevision: HEAD
   project: default

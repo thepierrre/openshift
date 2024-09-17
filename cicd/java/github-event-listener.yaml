@@ -2,7 +2,7 @@ apiVersion: triggers.tekton.dev/v1alpha1
 kind: EventListener
 metadata:
   name: github-event-listener
-  namespace: {{ .Values.namespace }}
+  namespace: gymtracker
   annotations:
     argocd.argoproj.io/sync-wave: "5"
 spec:

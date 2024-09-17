@@ -2,12 +2,12 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-wave: "6"
   labels:
   name: el-github-event-listener
   namespace: gymtracker
 spec:
-  host: el-github-event-listener-{{ .Values.namespace }}.{{ .Values.host }}
+  host: el-github-event-listener-gymtracker.apps.ocp4.piotr-owczarc.com
   port:
     targetPort: http-listener
   to:

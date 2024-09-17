@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: push-java-image-pipeline
+  namespace: openshift-gitops
+spec:
+  syncPolicy: 
+    automated:
+      selfHeal: true
+  destination:
+    server: https://kubernetes.default.svc
+  sources:
+    - repoURL: 'https://piotrowczarc.github.io/helm-charts/'
+      path: cicd/java
+      targetRevision: main
+  project: default
+
+
+

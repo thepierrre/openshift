@@ -10,7 +10,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
   sources:
-    - repoURL: 'https://piotrowczarc.github.io/helm-charts/'
+    - repoURL: https://github.com/thepierrre/openshift
       path: cicd/java
       targetRevision: main
   project: default

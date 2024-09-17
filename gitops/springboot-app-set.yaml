@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: springboot-demo
+  namespace: openshift-gitops
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    - list:
+        elements:
+          - name: service
+          - name: pipeline
+  template:
+    metadata:
+      name: 'springboot-demo-{{ .name }}'
+    spec:
+      syncPolicy: 
+        automated:
+          selfHeal: true
+      project: default
+      destination:
+        namespace: springboot-demo
+        server: https://kubernetes.default.svc
+      sources:
+        - repoURL: https://piotrowczarc.github.io/helm-charts/
+          chart: springboot
+          targetRevision: 0.4.0
+          helm:
+            valueFiles:
+              - $values/helm/application-values.yaml
+        - repoURL: https://piotrowczarc.github.io/helm-charts/
+          chart: cicd
+          targetRevision: 0.3.0
+          helm:
+            valueFiles:
+              - $values/helm/application-values.yaml
+        - repoURL: https://github.com/thepierrre/demo-springboot-app
+          targetRevision: HEAD
+          ref: values
+      

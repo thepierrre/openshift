@@ -2,7 +2,7 @@ apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
   name: maven
-  namespace: {{ .Values.namespace }}
+  namespace: gymtracker
   labels:
     app.kubernetes.io/version: "0.3"
   annotations:

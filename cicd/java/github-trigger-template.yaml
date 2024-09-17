@@ -8,10 +8,8 @@ metadata:
 spec:
   params:
     - name: git-revision
-      description: "The git revision"
       default: main
     - name: git-repo-url
-      description: "The git repository url"
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun

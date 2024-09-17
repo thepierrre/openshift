@@ -10,9 +10,9 @@ spec:
   destination:
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/thepierrre/ocp-cluster-config
-    path: ./
-    targetRevision: HEAD
+    repoURL: https://github.com/thepierrre/openshift
+    path: cluster-resources
+    targetRevision: main
   project: default
 
 

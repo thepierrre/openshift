@@ -6,18 +6,18 @@ metadata:
     include.release.openshift.io/self-managed-high-availability: "true"
     include.release.openshift.io/single-node-developer: "true"
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"config.openshift.io/v1","kind":"OAuth","metadata":{"annotations":{"include.release.openshift.io/ibm-cloud-managed":"true","include.release.openshift.io/self-managed-high-availability":"true","include.release.openshift.io/single-node-developer":"true","release.openshift.io/create-only":"true"},"creationTimestamp":"2024-09-16T14:12:29Z","generation":7,"name":"cluster","ownerReferences":[{"apiVersion":"config.openshift.io/v1","kind":"ClusterVersion","name":"version","uid":"f32db013-2609-418d-ab5b-03b1f9cb1a04"}],"resourceVersion":"256303","uid":"c1f89be9-4e78-47aa-86f1-e9b70fefe57d"},"spec":{"identityProviders":[{"htpasswd":{"fileData":{"name":"htpasswd"}},"mappingMethod":"claim","name":"Local","type":"HTPasswd"},{"github":{"clientID":"938c3e25ff648402abe7","clientSecret":{"name":"github"},"organizations":["piotrowczarc"]},"mappingMethod":"claim","name":"github","type":"GitHub"}]}}
+      {"apiVersion":"config.openshift.io/v1","kind":"OAuth","metadata":{"annotations":{"include.release.openshift.io/ibm-cloud-managed":"true","include.release.openshift.io/self-managed-high-availability":"true","include.release.openshift.io/single-node-developer":"true","release.openshift.io/create-only":"true"},"creationTimestamp":"2024-09-17T14:05:12Z","generation":2,"name":"cluster","ownerReferences":[{"apiVersion":"config.openshift.io/v1","kind":"ClusterVersion","name":"version","uid":"5fc3d604-69ac-42db-9a01-0ef14a3c0b29"}],"resourceVersion":"20089","uid":"72422177-6272-46c1-bb1a-7e070de3e4ea"},"spec":{"identityProviders":[{"htpasswd":{"fileData":{"name":"htpasswd"}},"mappingMethod":"claim","name":"Local","type":"HTPasswd"},{"github":{"clientID":"938c3e25ff648402abe7","clientSecret":{"name":"github"},"organizations":["piotrowczarc"]},"mappingMethod":"claim","name":"github","type":"GitHub"}]}}
     release.openshift.io/create-only: "true"
-  creationTimestamp: "2024-09-16T14:12:29Z"
-  generation: 8
+  creationTimestamp: "2024-09-17T14:05:12Z"
+  generation: 3
   name: cluster
   ownerReferences:
   - apiVersion: config.openshift.io/v1
     kind: ClusterVersion
     name: version
-    uid: f32db013-2609-418d-ab5b-03b1f9cb1a04
-  resourceVersion: "270034"
-  uid: c1f89be9-4e78-47aa-86f1-e9b70fefe57d
+    uid: 5fc3d604-69ac-42db-9a01-0ef14a3c0b29
+  resourceVersion: "27026"
+  uid: 72422177-6272-46c1-bb1a-7e070de3e4ea
 spec:
   identityProviders:
   - htpasswd:

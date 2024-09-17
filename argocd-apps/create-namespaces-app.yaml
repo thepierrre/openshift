@@ -10,7 +10,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
   source:
-    repoURL: 'https://github.com/thepierrre/openshift'
-    path: resources
+    repoURL: https://github.com/thepierrre/openshift
+    path: cluster-resources
     targetRevision: HEAD
   project: default

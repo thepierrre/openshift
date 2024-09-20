@@ -7,6 +7,6 @@ roleRef:
   name: pipelines-scc
   apiGroup: rbac.authorization.k8s.io
 subjects:
-  kind: ServiceAccount
-  name: builder
-  namespace: java-pipelines
+  - kind: ServiceAccount
+    name: builder
+    namespace: java-pipelines

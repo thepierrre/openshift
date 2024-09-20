@@ -7,10 +7,12 @@ metadata:
     argocd.argoproj.io/sync-wave: "5"
 spec:
   params:
-    - name: git-revision
-      default: release
-    - name: git-repo-url
+    - name: url
+      description: Git repository url
       default: https://github.com/thepierrre/workout-tracker-backend
+    - name: revision
+      description: Git revision
+      default: release
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
@@ -21,10 +23,10 @@ spec:
           name: java-build-and-push-image
         serviceAccountName: pipeline
         params:
-          - name: git-revision
-            value: $(params.git-revision)
-          - name: git-repo-url
-            value: $(params.git-repo-url)
+          - name: revision
+            value: $(params.revision)
+          - name: url
+            value: $(params.url)
         workspaces:
           - name: source-dir
             persistentVolumeClaim:

@@ -7,15 +7,17 @@ metadata:
     argocd.argoproj.io/sync-wave: "4"
 spec:
   params:
-    - name: git-repo-url
-    - name: git-revision
+    - name: url
+      description: Git repository url
+    - name: revision
+      description: Git revision
   tasks:
     - name: fetch-repository
       params:
-        - name: git-repo-url
-          value: $(params.git-repo-url)
-        - name: git-revision
-          value: $(params.git-revision)
+        - name: url
+          value: $(params.url)
+        - name: revision
+          value: $(params.revision)
       taskRef:
         kind: ClusterTask
         name: git-clone

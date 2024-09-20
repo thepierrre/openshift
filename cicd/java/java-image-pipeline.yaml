@@ -9,8 +9,10 @@ spec:
   params:
     - name: url
       description: "Git repository url"
+      default: https://github.com/thepierrre/workout-tracker-backend
     - name: revision
       description: "Git revision"
+      default: release
   tasks:
     - name: fetch-repository
       params:

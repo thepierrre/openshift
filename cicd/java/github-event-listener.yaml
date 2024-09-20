@@ -14,3 +14,7 @@ spec:
       name: github-push-trigger
       template:
         ref: github-trigger-template
+
+# The default service account "pipeline" has some permissions needed for the webhook to work
+# E.g., it has the permissions to read Cluster Interceptors and Interceptors 
+# Interceptors can catch the incoming traffic from webhooks and manage it (discard, edit etc.) before passing them to the event listeners.

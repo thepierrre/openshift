@@ -45,8 +45,8 @@ spec:
           workspace: source-dir
         - name: maven-settings
           workspace: maven-settings-dir
-        # - name: maven-local-repo
-        #   workspace: maven-local-m2
+        - name: maven-local-repo
+          workspace: maven-local-m2
     - name: get-project-version
       taskRef:
         kind: Task
@@ -72,4 +72,4 @@ spec:
   workspaces:
     - name: source-dir
     - name: maven-settings-dir
-    # - name: maven-local-m2
+    - name: maven-local-m2

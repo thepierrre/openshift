@@ -6,7 +6,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "5"
 spec:
-  serviceAccountName: builder
+  serviceAccountName: pipeline
   triggers:
     - bindings:
         - kind: ClusterTriggerBinding

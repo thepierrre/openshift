@@ -1,9 +1,9 @@
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  name: tekton-trigger-reader
-  namespace: java-pipelines
-rules:
-  - apiGroups: ["triggers.tekton.dev"]
-    resources: ["triggerbindings", "triggertemplates", "triggers", "eventlisteners", "interceptors"]
-    verbs: ["get", "list", "watch"]
+# apiVersion: rbac.authorization.k8s.io/v1
+# kind: Role
+# metadata:
+#   name: tekton-trigger-reader
+#   namespace: java-pipelines
+# rules:
+#   - apiGroups: ["triggers.tekton.dev"]
+#     resources: ["triggerbindings", "triggertemplates", "triggers", "eventlisteners", "interceptors"]
+#     verbs: ["get", "list", "watch"]

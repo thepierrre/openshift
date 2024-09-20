@@ -55,7 +55,7 @@ spec:
     - name: build-and-push-image
       params:
         - name: IMAGE
-          value: image-registry-openshift-image-registry.apps.ocp4.piotr-owczarc.com/gymtracker/gymtracker-backend:$(tasks.get-project-version.results.version)
+          value: image-registry.openshift-image-registry.svc.cluster.local:5000/gym-tracker/gym-tracker-java:$(tasks.get-project-version.results.version)
       runAfter:
         - get-project-version
       taskRef:

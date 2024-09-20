@@ -8,9 +8,9 @@ metadata:
 spec:
   params:
     - name: url
-      description: Git repository url
+      description: "Git repository url"
     - name: revision
-      description: Git revision
+      description: "Git revision"
   tasks:
     - name: fetch-repository
       params:

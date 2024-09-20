@@ -8,10 +8,10 @@ metadata:
 spec:
   params:
     - name: url
-      description: Git repository url
+      description: "Git repository url"
       default: https://github.com/thepierrre/workout-tracker-backend
     - name: revision
-      description: Git revision
+      description: "Git revision"
       default: release
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1

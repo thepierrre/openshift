@@ -2,23 +2,29 @@ apiVersion: triggers.tekton.dev/v1beta1
 kind: TriggerTemplate
 metadata:
   name: github-trigger-template
-  namespace: gymtracker
+  namespace: java-pipelines
   annotations:
     argocd.argoproj.io/sync-wave: "5"
 spec:
   params:
     - name: git-revision
-      default: main
+      default: release
     - name: git-repo-url
+      default: https://github.com/thepierrre/workout-tracker-backend
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
       metadata:
-        generateName: sample-java-pipeline-run-
+        generateName: java-build-and-push-image-pipeline-run-
       spec:
         pipelineRef:
-          name: java-pipeline
+          name: java-build-and-push-image
         serviceAccountName: pipeline
+        params:
+          - name: git-revision
+            value: $(params.git-revision)
+          - name: git-repo-url
+            value: $(params.git-repo-url)
         workspaces:
           - name: source-dir
             persistentVolumeClaim:

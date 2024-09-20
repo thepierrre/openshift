@@ -2,7 +2,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: maven-settings-workspace
-  namespace: gymtracker
+  namespace: java-pipelines
   annotations:
     argocd.argoproj.io/sync-wave: "3"
 spec:

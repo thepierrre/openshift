@@ -1,18 +1,21 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
-  name: java-pipeline
-  namespace: gymtracker
+  name: java-build-and-push-image
+  namespace: java-pipelines
   annotations:
     argocd.argoproj.io/sync-wave: "4"
 spec:
+  params:
+    - name: git-repo-url
+    - name: git-revision
   tasks:
     - name: fetch-repository
       params:
-        - name: url
-          value: https://github.com/thepierrre/workout-tracker-backend
-        - name: revision
-          value: release
+        - name: git-repo-url
+          value: $(params.git-repo-url)
+        - name: git-revision
+          value: $(params.git-revision)
       taskRef:
         kind: ClusterTask
         name: git-clone
@@ -38,8 +41,8 @@ spec:
           workspace: source-dir
         - name: maven-settings
           workspace: maven-settings-dir
-        - name: maven-local-repo
-          workspace: maven-local-m2
+        # - name: maven-local-repo
+        #   workspace: maven-local-m2
     - name: get-project-version
       taskRef:
         kind: Task
@@ -56,7 +59,7 @@ spec:
       runAfter:
         - get-project-version
       taskRef:
-        kind: Task
+        kind: ClusterTask
         name: buildah
       workspaces:
         - name: source
@@ -65,4 +68,4 @@ spec:
   workspaces:
     - name: source-dir
     - name: maven-settings-dir
-    - name: maven-local-m2
+    # - name: maven-local-m2

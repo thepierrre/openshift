@@ -5,7 +5,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "6"
   labels:
   name: el-github-event-listener
-  namespace: gymtracker
+  namespace: java-pipelines
 spec:
   host: el-github-event-listener-gymtracker.apps.ocp4.piotr-owczarc.com
   port:

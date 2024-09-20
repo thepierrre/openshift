@@ -14,7 +14,6 @@ spec:
       spec:
         pipelineRef:
           name: java-build-and-push-image
-        serviceAccountName: pipeline
         workspaces:
           - name: source-dir
             persistentVolumeClaim:

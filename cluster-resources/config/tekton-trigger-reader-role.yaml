@@ -5,5 +5,5 @@ metadata:
   namespace: java-pipelines
 rules:
   - apiGroups: ["triggers.tekton.dev"]
-    resources: ["triggerbindings", "triggertemplates", "triggers", "clusterinterceptors"]
+    resources: ["triggerbindings", "triggertemplates", "triggers", "clusterinterceptors", "eventlisteners"]
     verbs: ["get", "list", "watch"]

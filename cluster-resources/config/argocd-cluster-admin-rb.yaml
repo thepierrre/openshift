@@ -1,15 +1,15 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: argocd-cluster-admin
+  name: argocd-cluster-edit-rights
+roleRef:
+  kind: ClusterRole
+  name: edit
+  apiGroup: rbac.authorization.k8s.io
 subjects:
   - kind: ServiceAccount
     name: openshift-gitops-argocd-application-controller
     namespace: openshift-gitops
-roleRef:
-  kind: ClusterRole
-  name: cluster-admin
-  apiGroup: rbac.authorization.k8s.io
 
 # Gives cluster-admin privileges to the 'openshift-gitops-argocd-application-controller' service account in the 'openshift-gitops' namespace. 
 # This means that ArgoCD can deploy on OpenShift all the resources for which you need the cluster-admin privileges.
